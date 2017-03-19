@@ -1,0 +1,30 @@
+{
+  "name": "node_blog",
+  "version": "1.0.0",
+  "description": "a node note book",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenxiaoangle/node_blog.git"
+  },
+  "keywords": [
+    "node",
+    "note",
+    "book"
+  ],
+  "author": "chenxiaongle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenxiaoangle/node_blog/issues"
+  },
+  "homepage": "https://github.com/chenxiaoangle/node_blog#readme",
+  "devDependencies": {
+    "lodash": "^4.17.4"
+  },
+  "dependencies": {
+    "axios": "^0.15.3"
+  }
+}
