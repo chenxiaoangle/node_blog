@@ -4,7 +4,7 @@
   "description": "a node note book",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node --inspect index.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/chenxiaoangle/node_blog#readme",
   "devDependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "nodemon": "^1.11.0"
   },
   "dependencies": {
     "axios": "^0.15.3"
