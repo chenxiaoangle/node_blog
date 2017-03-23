@@ -7,17 +7,30 @@ class App {
     constructor(){
     }
     initServer(){
-
-        let _package = require('../package');
-
-
         return (request,response)=>{
-            fs.readFile('./public/index.html', 'utf8', (error, data) => {
-                response.end(JSON.stringify(_package))
-            })
-
+            let { url } = require;
+            //每个请求逻辑
+            if (url == '/css/index.css'){
+                fs.readFile('./public/css/index.css', 'utf-8',(err,data)=>{
+                    response.end(data)
+                })
+            }
+            if (url == '/js/index.js'){
+                fs.readFile('./public/js/index.js', 'utf-8',(err,data)=>{
+                    response.end(data)
+                })
+            }
+            if (url == '/'){
+                fs.readFile('./public/index.html', 'utf-8',(err,data)=>{
+                    response.end(data)
+                })
+            }
         }
     }
-}
+};
+
+
+
+
 
 module.exports= App
