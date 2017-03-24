@@ -2,29 +2,17 @@
 
 
 const fs = require('fs');
-
+const path = require('path')
+const staticServer = require('./static-server')
 class App {
     constructor(){
     }
     initServer(){
         return (request,response)=>{
-            let { url } = require;
-            //每个请求逻辑
-            if (url == '/css/index.css'){
-                fs.readFile('./public/css/index.css', 'utf-8',(err,data)=>{
-                    response.end(data)
-                })
-            }
-            if (url == '/js/index.js'){
-                fs.readFile('./public/js/index.js', 'utf-8',(err,data)=>{
-                    response.end(data)
-                })
-            }
-            if (url == '/'){
-                fs.readFile('./public/index.html', 'utf-8',(err,data)=>{
-                    response.end(data)
-                })
-            }
+            let { url } = request;
+            //每个请求逻辑 根据url进行分发
+            let body = staticServer(url)
+            response.end(body)
         }
     }
 };
