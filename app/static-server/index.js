@@ -1,22 +1,23 @@
 
 
 const path=require('path');
-const fs=require('fs')
-let getPath=(url)=>path.resolve(process.cwd(),'public',`.${url}`)
+const fs=require('fs');
+let getPath=(url)=>path.resolve(process.cwd(),'public',`.${url}`);
 
-let staticFunc = (url)=>{
-    if(url == '/'){
-        url = '/index.html'
+let staticFunc;
+staticFunc = (url) => {
+    if (url === '/') {
+        url = '/index.html';
     }
-    let _path=getPath(url)
-    let body='';
-    try{
-        body =fs.readFileSync(_path)
-    }catch(error){
-        body =`NOT FOUND${error.stack}`
+    let _path = getPath(url);
+    let body = '';
+    try {
+        body = fs.readFileSync(_path);
+    } catch (error) {
+        body = `NOT FOUND${error.stack}`;
     }
-    return body
+    return body;
 
 };
 
-module.exports = staticFunc
+module.exports = staticFunc;
