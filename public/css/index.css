@@ -2,6 +2,9 @@
 
 
 
-body{
-    background: purple;
+.nav{
+    display: block;
+}
+image{
+    display: block;
 }
