@@ -8,7 +8,6 @@ module.exports=(url)=>{
         '/user.action':['myname','myage','myweight']
     }
 
-
-    return apiMap[url];
+    return Promise.resolve(apiMap[url]);
 
 }
