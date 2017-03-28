@@ -18,7 +18,8 @@ let p = new Promise((resolve,reject)=>{
         setTimeout(reject,1000,'hello world')
     });
 console.log(p)
-//then has two premeters , first is dealing with resolve,second is dealing with reject
+console.log(1)
+//then has two parameters , first is dealing with resolve,second is dealing with reject
 p.then(val=>
     //deal with resolve
     console.log(`resolve then val is ${val}`),
@@ -26,4 +27,6 @@ p.then(val=>
         //deal with reject
         console.log(`reject val is ${val}`)
 );
+//catch is dealing with the reject result.
+
 setTimeout(()=>p.catch(val=>console.log(`another val is ${val}`)),2000)
